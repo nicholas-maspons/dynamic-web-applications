@@ -1,0 +1,22 @@
+#root {
+    margin-top: 50px;
+}
+
+.recipe-card {
+    width: 90%;
+    
+    margin: 0px auto;
+    border: 5px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    .recipe-img {
+        width: 30%;
+    }
+
+    .list {
+        padding-left: 5%;
+    }
+}
