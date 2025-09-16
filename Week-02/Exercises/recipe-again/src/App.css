@@ -1,0 +1,11 @@
+.card_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1.5rem;
+}

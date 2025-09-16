@@ -1,0 +1,45 @@
+.counter {
+    background-color: var(--c-dark-blue);
+
+    margin: 50px auto 0px auto;
+    border-radius: 25px;
+
+    width: 200px;
+    height: 150px;
+}
+
+h2 {
+    color: white;
+    font-family: var(--ff-bitcount);
+    font-size: 36px;
+    font-weight: 300;
+
+    height: 75%;
+
+    /* Centers number */
+    display: flex;
+    justify-content: center;  /* main axis */
+    align-items: center;  /* cross axis */
+}
+
+.button_container {
+    height: 25%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+button {
+    background-color: var(--c-light-blue);
+    color: white;
+    font-family: var(--ff-bitcount);
+    font-size: 18px;
+    font-weight: 200;
+
+    border: none;
+    border-radius: 10px;
+
+    width: 35%;
+}
