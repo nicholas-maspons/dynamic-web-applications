@@ -19,22 +19,54 @@ Then I can decide what approach I like.
 <Card><div>Look at me I am a child text node of the card component</div></Card>
 */
 
-// Note: The entire app is just a RecipeCard. The classes here should probably be inside RecipeCard.module.css and UserRating should be part of the card. Just saying
+// Note: The entire app is just a RecipeCard. The classes here should probably be inside RecipeCard.module.css and UserRating should be part of the card. Just saying.
+// Ideally I would have just 3 RecipeCard tags without all the mess inside since that code should be in RecipeCard.js. But remember this is an example of using props.children.
 function App() {
     return (
-        <RecipeCard>
-            <div className='recipe_details'>
-                <RecipeImage image={RECIPE.imgSrc}/>
-                <div className="card_text">
-                    <RecipeInfo title={RECIPE.title} description={RECIPE.description}/>
-                    <div className="card_list">
-                        <IngredientList data={RECIPE.ingredients}/>
-                        <InstructionList data={RECIPE.instructions}/>
+        <>
+            <header>Recipe App</header>
+            <div className='wrapper'>
+                <RecipeCard>
+                    <div className='recipe_details'>
+                        <RecipeImage image={RECIPE.imgSrc}/>
+                        <div className="card_text">
+                            <RecipeInfo title={RECIPE.title} description={RECIPE.description}/>
+                            <div className="card_list">
+                                <IngredientList data={RECIPE.ingredients}/>
+                                <InstructionList data={RECIPE.instructions}/>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <UserRating/>
+                </RecipeCard>
+                <RecipeCard>
+                    <div className='recipe_details'>
+                        <RecipeImage image={RECIPE.imgSrc}/>
+                        <div className="card_text">
+                            <RecipeInfo title={RECIPE.title} description={RECIPE.description}/>
+                            <div className="card_list">
+                                <IngredientList data={RECIPE.ingredients}/>
+                                <InstructionList data={RECIPE.instructions}/>
+                            </div>
+                        </div>
+                    </div>
+                    <UserRating/>
+                </RecipeCard>
+                <RecipeCard>
+                    <div className='recipe_details'>
+                        <RecipeImage image={RECIPE.imgSrc}/>
+                        <div className="card_text">
+                            <RecipeInfo title={RECIPE.title} description={RECIPE.description}/>
+                            <div className="card_list">
+                                <IngredientList data={RECIPE.ingredients}/>
+                                <InstructionList data={RECIPE.instructions}/>
+                            </div>
+                        </div>
+                    </div>
+                    <UserRating/>
+                </RecipeCard>
             </div>
-            <UserRating/>
-        </RecipeCard>
+        </>
     )
 }
 

@@ -1,3 +1,21 @@
+header {
+    background-color: var(--c-blue);
+    font-size: 30px;
+
+    padding: 10px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .recipe_details {
     display: flex;
     flex-direction: row;
