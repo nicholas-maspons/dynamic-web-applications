@@ -1,0 +1,31 @@
+.user_rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rating_button {
+    background-color: var(--c-blue);
+    color: white;
+    font-size: 20px;
+
+    /* margin-top matches the margin of .recipe_card */
+    margin-top: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+/* the icon is called "favorite" but I'm using it as a star for user rating, hence the class name */
+.stars {
+    width: 100%;
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hide {
+    visibility: hidden;
+}

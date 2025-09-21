@@ -21,3 +21,7 @@
 - Extra
     - Never use absolute paths in code as it can break when deploying or sharing your project on internet
     - When I install a package with npm, the dependencies in package.json get updated automatically
+    - To use icons with CRA:
+        - https://github.com/marella/material-design-icons/tree/main/svg
+        - npm install @material-design-icons/svg@latest
+        - import { ReactComponent as Face } from '@material-design-icons/svg/filled/face.svg';        
