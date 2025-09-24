@@ -17,10 +17,9 @@ const UserRating = () => {
         setCount(count + 1)
     }
 
-    // spread operator used so that there are undefined values inside the array instead of empty slots, which map won't loop through
+    // spread operator is used so that there are undefined values inside the array. If I did Array(count), map won't loop through the array since all the slots are completely empty
     const hearts = [...Array(count)].map(() => {return <Favorite/>})
 
-    // && returns the first falsy value or the last value if everything is truthy
     return (
         <div className={styles.user_rating}>
             {/*             
