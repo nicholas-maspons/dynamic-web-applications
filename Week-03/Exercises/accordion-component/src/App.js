@@ -1,4 +1,4 @@
-import Accordion from './components/Accordian'
+import Accordion from './components/Accordion'
 
 const App = () => {
   return (

@@ -3,7 +3,7 @@
 (fix later, i just need to push SOMETHING)
 
 - Tailwind
-    - How to set it up
+    - Notes on how to set it up: Add later
 - Pages
 
 - Extra
@@ -13,7 +13,10 @@
 
     - proptypes not working? delete that later maybe. or just leave the example since i think its correct
 
+    - explain how the button in the pages vs button only example are slightly diff
 
+
+but if i didn't have the json , tailwind config, and src, what steps would I have taken. I tried but ended up with a different tailwind version and nothing worked
 rest: 
 npm install classnames
 npm install prop-types or npm i prop-types
