@@ -9,7 +9,6 @@ const OPTIONS = [
 
 const App = () => {
   
-  // so tht all children of the parent have access to this piece of states value and can update and rerender when it changes 
   // This is where we will receive the value selected from the dropdown menu. It is being tracked in the parent component (App.js)
   // This only supports the selection of one value from the dropdown options
   const [value, setValue] = useState(null)
