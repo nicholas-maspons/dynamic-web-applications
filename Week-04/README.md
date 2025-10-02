@@ -1,15 +1,10 @@
-value? explain it
+### Week 04 Notes
 
-The dropdown-component file can very easily be adjusted to get the same visual effect without using the parent's state. However, dropdowns are typically used as part of a form, and i need to bring that data out of the dropdown component to actually do something with it. I won't even show that version since it's not very practical in a real world scenario, but if future me want sto see it anyway, it only takes a minute to make the needed changes
+- Dropdown Component Notes
+    - The dropdown-component file can very easily be adjusted to get the same visual effect without using the parent's state. However, dropdowns are typically used as part of a form, and I need to get its input data out from the dropdown component and back into the parent to actually do something with it. I won't even show that version since it's not very practical in a real world scenario, but if future me wants to see it anyway, it only takes a minute to make the needed changes (Don't waste your time on this Nicholas...)
+    - How it works: a value is passed down by the parent, then the child passes back the updated value back, causing the parent to rerender. which is again passed back to the child, which changes the "Select" to whatever value was chosen.
 
-For the version i pushed:
-a value is passed down by the parent, then the child passes back the updated value back, causing the parent to rerender. which is again passed back to the child, which changes the "Select" to whatever was chosen
-
-
-
-
-the dropdown i have alone does not feature the filtering of teams. also it doesnt have the addition of color to the bg. so thats how the dropdown is diff. button is the same. accordion has more complexity ig.
-
-the dropdown in compoents pages, uses the value passed back by the child to update the bg color of the parent. 
-
-The accordion in compnents pages has more items, and collapses the previously opened item when opening a new one
+- Extra
+    - The dropdown in dropdown-component is less complex than that in the pages project, as it does not include the filtering of teams.
+    - The accordion in pages is more complex than the one in Week-03, as this one supports multiple items.
+    - obj?.key checks if object exists first, then accesses the field. An error happens if you try object.key when object is null or some other "non existent" thing.

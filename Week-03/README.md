@@ -1,25 +1,20 @@
 ### Week 03 Notes
 
-(fix later, i just need to push SOMETHING)
-
 - Tailwind
-    - Notes on how to set it up: Add later
+    - [Install Tailwind CSS with Create React App](https://v3.tailwindcss.com/docs/guides/create-react-app)
+    - [Tailwind Merge](https://www.npmjs.com/package/tailwind-merge)
+    - [Why I can't use dynamic classes](https://tailwindcss.com/docs/detecting-classes-in-source-files)
+
 - Pages
+    - Not much to say. Quite simple
 
 - Extra
     - https://react-icons.github.io/react-icons/
-
-    - add notes on how to get a project running by just copying src and json, then doing npm install. for somereason tailwind doesnt work. im misssing the config file and even then it didnt work. and the version i did install was 4. something while prof was 3. how did she get that
-
-    - proptypes not working? delete that later maybe. or just leave the example since i think its correct
-
-    - explain how the button in the pages vs button only example are slightly diff
-
-
-but if i didn't have the json , tailwind config, and src, what steps would I have taken. I tried but ended up with a different tailwind version and nothing worked
-rest: 
-npm install classnames
-npm install prop-types or npm i prop-types
-npm install tailwind-merge
-Or?
-npm i tailwind-merge
+    - Proptypes example is not working but I'm pretty sure it's correct. Whatever
+    - The button in component-pages is slightly more complex as it uses ...otherProps
+    - How to clone professor's code locally:
+        - npx create-react-app [folder name] and cd into it
+        - Pull professor's code from repo in separate VSCode window
+        - Replace my src folder and json files with her's
+        - Copy tailwind config file if it's there
+        - npm install then npm start
