@@ -1,104 +1,61 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import {GoChevronDown} from 'react-icons/go'
 import Panel from './Panel'
 
 const Dropdown = (props) => {
+
   const {options, onChange, value} = props
+
   const [isOpen, setIsOpen] = useState(false)
 
-  // like useState. its also a named export. Takes 2 arguments
-  // 1. the function you want to call (always a function)
-  // 2. an array od props, state, any js variables available to this component to watch
-  // useEffect fires when the component mounts (the first time it renders on the creen. aka initial render)
-  // if anything is in the second array, these are js vars, aka state, variables, props
-  // these are items we are watching. if one of thosee variables changes, useEffect will fire the function from the first argument again
+  // I want to close the dropdown menu just by clicking off of it, instead of only being able to by clicking it again. So that's what this useEffect is for
+  // Runs once on mount to add event listener
+  const divEl = useRef()
 
-  // this is great for api calls or adding event listeners the old fashioned way
-  // the one we are using, seen below
-  // const useEffect(() => {}, [])
+  useEffect(() => {
+    const handler = (event) => {
+      // check that divEl.current exists before AND that it does not contain the event target (mouse click location)
+      if (divEl.current && !divEl.current.contains(event.target)) {
+        setIsOpen(false)
+        console.log('clicked outside dropdown')
+      }
+    }
 
-  // fire on mount, and everytime the calue of stateVar changes
-  // const useEffect((myFunction) => {}, [stateVar])
+    // This is for clicks OUTSIDE our dropdown component because of the conditional check above
+    document.addEventListener('click', handler)
 
-  // if no second argument, it will fire everytime the cmponent rerenders for any reason
-  // const useEffect(() => {})
+    return () => {document.removeEventListener('click', handler)} // cleanup function
+  }, [])
 
-  // fire once on mount to add event listener, 
-  // if the funcrion in the first arg returns another function
-  // that gets fred when the component is destroyed
-  // this is a cleanup function
-  // const useEffect(() => {
-  //   // we get this 'event' for free,?
-  //   // define our handler
-  //   // here, we are calling setIsOpen a better way
-  //   const handler = (event) => {
-  //     // scroll down for div el and useRef example
-  //     if (!divEl.current.contains(event.target)) {
-  //       setIsOpen(false)
-  //     }
-  //   }
-  //   // define our listener. Note: 3rd arg
-  //   document.addEventListener('click', handler, true)
-  //   // when we return a fcuntin, called a cleanup callback on destroy
-  //   return () => {
-  //     // removing the event lsitener above
-  //     document.removeEventListener('click', handler)
-  //   }
-  // }, [])
+const handleClick = () => {setIsOpen(!isOpen)}
 
-  const handleClick = () => {
-    setIsOpen(!isOpen)
-  }
+const handleOptionClick = (option) => {
+  setIsOpen(false) // When a value is selected, close menu. This is typical of dropdowns
+  onChange(option) // Using a function defined by the parent component that was then passed in as a prop
+}
 
-  const handleOptionClick = (option) => {
-    setIsOpen(false)
-    // need some other function defined by the
-    // parent component passed in as a prop to call here
-    onChange(option)
-  }
-
-  const renderedOptions = options.map((opt, index) => {
+  // Using index as the key is not ideal. But it works here since there is no insertions, deletions, etc going on.
+    const renderedOptions = options.map((option, index) => {
+      return (
+        // If I want to pass a function that takes an argument, () is needed, but that calls it immediately instead of passing a reference. To avoid this and have the function execute onClick only, wrap it in an arrow function.
+        <div onClick={() => {handleOptionClick(option)}} key={index} className="hover:bg-sky-100 rounded cursor-pointer p-1">
+          {option.label}
+        </div>
+      )})
+  
     return (
-      <div
-        onClick={() => handleOptionClick(opt)}
-        key={index}
-        className="hover:bg-sky-100 rounded cursor-pointer p-1"
-      >
-        {opt.label}
+      // React doesnt render objects, but data from objects instead. If I type value instead of value.label, an error happens
+      // Also, .label is used instead of .value because it is uppercase and would look nicer
+      // I don't do value?.label because it is already confirmed that value is not null since value evaluated to true
+      <div className="w-48 relative" ref={divEl}>
+        <Panel onClick={handleClick} className="flex justify-between items-center cursor-pointer">
+          <span>{value ? value.label : "Select"}</span>
+          <GoChevronDown/>
+        </Panel>
+        {isOpen && <Panel className="absolute top-full">{renderedOptions}</Panel>}
       </div>
     )
-  })
+  }
 
-  return (
-    <div className="w-48 relative">
-      <Panel
-        onClick={handleClick}
-        className="flex justify-between items-center cursor-pointer"
-      >
-        {/* if value exists (aka not null or undefined) find the value key within{{value?.value} */
-        /* great use of a ternary */}
-        {value ? value.label : 'Select...'} <GoChevronDown />
-      </Panel>
-      {isOpen && <Panel className="absolute top-full">{renderedOptions}</Panel>}
-    </div>
-  )
-}
-/* moved to own file
-const Panel = (props) => {
-  const {className, children, ...rest} = props
-  const finalClassNames = cx(
-    className,
-    'border rounded p-3 shadow bg-white w-full'
-  )
-  return (
-    <div {...rest} className={finalClassNames}>
-      {children}
-    </div>
-  )
-}
-
-// named export
-export {Panel}
-*/
-// default export (usually the file name should give you a hint about what to be the default export)
 export default Dropdown
+  
