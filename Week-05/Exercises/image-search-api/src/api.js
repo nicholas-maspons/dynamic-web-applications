@@ -10,7 +10,7 @@ const searchImages = async (term) => {
     */
     const response = await axios.get('https://api.unsplash.com/search/photos', { // If I didn't use await here, my console.log would not work as it would output before I got my response
         headers: {
-            Authorization: 'Client-ID {Paste Access Key here and remove the curly braces. Leave a space between the key and Client-ID}'
+            Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`
         },
         params: {query: term}
     })
