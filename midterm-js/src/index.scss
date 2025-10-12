@@ -1,0 +1,21 @@
+/* Probably not using all of them in the final project. Just 2 of 4 */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  /* Light Mode */
+  --l-header: #F8F9FA;
+  --l-background: #EDEDED;
+  /* Dark Mode */
+  --d-header: #2C2C2C;
+  --d-background: #1A1A1A;
+
+  --ff-dm-sans: 'DM Sans';
+  --ff-open-sans: 'Open Sans';
+  --ff-roboto: 'Roboto';
+  --ff-ubuntu: 'Ubuntu'; 
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
