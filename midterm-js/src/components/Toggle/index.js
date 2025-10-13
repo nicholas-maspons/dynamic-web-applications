@@ -1,4 +1,4 @@
-function Toggle () {
+function Toggle() {
 
     return (
         <div>

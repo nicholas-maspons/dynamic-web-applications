@@ -9,11 +9,10 @@ function Header (props) {
     return (
         <header className={styles.header}>
             <h1 className={styles.brand}>{name}</h1>
-            {/* map bc this is meant to be dynamic */}
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
                     {pages.map((page) => {
-                        return <li><NavLink to={page.path} className={styles.link}>{page.name}</NavLink></li>
+                        return <li><NavLink to={page.path} className={({isActive}) => `${styles.link} ${isActive ? styles.active : ''}`}>{page.name}</NavLink></li>
                     })}
                 </ul>
             </nav>
