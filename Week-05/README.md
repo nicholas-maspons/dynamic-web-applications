@@ -8,6 +8,7 @@
     - NavLink  
       - NavLink is just Link with the extra feature of automatically providing an object with the 'isActive' and 'isPending' keys for functions passed to the className property, allowing for additional styling based on if the NavLink is the currently visited URL.
       - [Docs](https://reactrouter.com/api/components/NavLink)
+      - NavLink's 'to' property needs a Route with a matching 'path' property.
 
 - useRef
     - Allows us to watch a specific element by associatiing it with variable
