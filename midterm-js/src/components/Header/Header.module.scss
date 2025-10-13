@@ -32,10 +32,12 @@
 }
 
 // just add a :hover
-.li {
+.link {
     // The bg of li is transparent without this, and looks the exact same if I remove this line. 
     // But I need it because the brightness() in :hover needs a color to work with.
     background-color: var(--l-header);    
+    text-decoration: none;
+    color: black;
     font-size: 1.2rem;
     padding: 0 2rem;
     height: 100%;
@@ -47,12 +49,11 @@
     transition: filter 0.6s;
 }
 
-.li:hover {
+.link:hover {
     cursor: pointer;
     // Is basically the exact same color as the bg of body. I could just set the bg to that color instead, but at least I'm trying something new
-    // ^ This comment is no longer true, i made it darker now
+    // ^ This comment is no longer true, i made it darker now (so delete it...) NO I SAID NO
     filter: brightness(0.85);
-    
 }
 
 // when dark mode time comes, i will change .li class anme to .li_l and make li_d or something and swap between them. but als oa base one bc they both use flex etc

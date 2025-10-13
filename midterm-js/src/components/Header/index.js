@@ -12,17 +12,11 @@ function Header (props) {
             {/* map bc this is meant to be dynamic */}
             <nav className={styles.nav}>
                 <ul className={styles.ul}>
-                    {/* {pages.map((page) => {
-                        return <li><NavLink/></li>
-                    })} */}
-                    <li className={styles.li}>Home</li>
-                    <li className={styles.li}>Stats</li>
-                    <li className={styles.li}>Settings</li>
+                    {pages.map((page) => {
+                        return <li><NavLink to={page.path} className={styles.link}>{page.name}</NavLink></li>
+                    })}
                 </ul>
             </nav>
-            {/* <nav>
-                <li><NavLink/></li>
-            </nav> */}
         </header>
     )
 }

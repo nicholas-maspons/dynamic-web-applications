@@ -3,15 +3,33 @@ import { Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
 
+import HomePage from './pages/HomePage'
+import StatsPage from './pages/StatsPage'
+import SettingsPage from './pages/SettingsPage'
+
 import './App.scss'
 
 const site_name = 'Water Intake Tracker'
-// 'pages' array of objects
 const pages = [
-  {'Home': '/'},
-  {'Stats': '/stats'},
-  {'Settings': '/settings'}
+  // HomePage and the other values of the component keys are imported from their respective files. Don't overthink this. OKAy?
+  {
+    name: 'Home',
+    path: '/',
+    component: HomePage
+  },
+  {
+    name: 'Stats',
+    path: '/stats',
+    component: StatsPage
+  },
+  {
+    name: 'Settings',
+    path: '/settings',
+    component: SettingsPage
+  }
 ]
+
+// add an active (underline) showing which pae we are currently on? use the isActive from NavLink
 
 function App() {
 
@@ -24,12 +42,11 @@ function App() {
 
   return (
     <div className="app">
-      <Header name={site_name} pages=""/>
+      <Header name={site_name} pages={pages}/>
       <Routes>
-        {/* maybe map here also */}
-        <Route/>
-        <Route/>
-        <Route/>
+        {pages.map((page) => {
+          return <Route path={page.path} element={<page.component/>}/>
+        })}
       </Routes>
     </div>
   );
