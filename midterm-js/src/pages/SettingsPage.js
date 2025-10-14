@@ -15,31 +15,31 @@ const sections =
             //     label: 'Edit Goals',
             //     component: 'idk yet'
             // },
+            // {
+            //     label: 'Toggle Units',
+            //     component: Toggle
+            // },
             {
-                label: 'Toggle Units',
-                component: Toggle
-            },
-            {
-                label: 'Toggle Theme',
+                label: 'Light / Dark',
                 component: Toggle
             }
         ]
     },
-    {
-        title: 'Account',
-        component: SettingsSection,
-        items: [
-            {
-                label: 'Change Name',
-                // fix later since this wont actually be a Toggle
-                component: Toggle
-            },
+    // {
+    //     title: 'Account',
+    //     component: SettingsSection,
+    //     items: [
+    //         {
+    //             label: 'Change Name',
+    //             // fix later since this wont actually be a Toggle
+    //             component: Toggle
+    //         },
     //         {
     //             label: 'Log Out',
     //             component: 'idk yet'
     //         }
-        ]
-    }
+    //     ]
+    // }
 ]
 
 function SettingsPage () {

@@ -8,8 +8,8 @@
     // But this is also good for media queries
     // I never use rem but it's time to switch things up
     height: 4rem;
-
-    background-color: var(--l-header);
+    // color: var(--text);
+    background-color: var(--panel-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,9 +36,10 @@
 .link {
     // The bg of li is transparent without this, and looks the exact same if I remove this line. 
     // But I need it because the brightness() in :hover needs a color to work with.
-    background-color: var(--l-header);    
+    background-color: var(--panel-bg);    
     text-decoration: none;
-    color: black;
+    // best thing ever. When I made the text white in dark mode, this remained black because saying it here is more specific, so it remained black. 
+    color: inherit;
     font-size: 0.95rem;
     padding: 0 2rem;
     height: 100%;
@@ -52,7 +53,7 @@
     cursor: pointer;
     // Is basically the exact same color as the bg of body. I could just set the bg to that color instead, but at least I'm trying something new
     // ^ This comment is no longer true, i made it darker now (so delete it...) NO I SAID NO
-    filter: brightness(0.85);
+    filter: brightness(0.7);
 }
 
 .active {

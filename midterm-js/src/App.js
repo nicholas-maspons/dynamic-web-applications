@@ -29,12 +29,12 @@ const pages = [
   }
 ]
 
-// add an active (underline) showing which pae we are currently on? use the isActive from NavLink
+// add an active (underline) showing which page we are currently on? use the isActive from NavLink
 
 function App() {
 
   // will be used in a ternary later. perhaps in the returned div classname .dark and .light in App.css if i use one
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   const handleThemeToggle = () => {
     setIsLight(!isLight);
@@ -43,7 +43,7 @@ function App() {
   
 
   return (
-    <div className="app">
+    <div className={`app ${isLight ? "light" : "dark"}`}>
       <Header name={site_name} pages={pages}/>
       <Routes>
         {pages.map((page) => {
