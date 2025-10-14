@@ -1,0 +1,19 @@
+@use '../../_mixins' as mixins;
+
+.item {
+    height: 3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 15px;
+    padding: 0 1rem;
+    // maybe update this name of this color variable
+    background-color: var(--l-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .label {
+        font-family: var(--ff-open-sans);
+        // color: pink;
+    }
+}

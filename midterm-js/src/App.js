@@ -36,7 +36,9 @@ function App() {
   // will be used in a ternary later. perhaps in the returned div classname .dark and .light in App.css if i use one
   const [isLight, setIsLight] = useState(false);
 
-
+  const handleThemeToggle = () => {
+    setIsLight(!isLight);
+  }
 
   
 
