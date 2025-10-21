@@ -10,11 +10,12 @@
 
 // these are available to everything including and inside the parent, which is the whole app in this case since App has this style (or dark) at all times
 .light {
-  --panel-bg: #F8F9FA;
   --bg: #EBEBEB;
+  --panel-bg: #F8F9FA;
   --text: black; 
 }
 
+// this isdeclaring vars that can be seen all chidlren of the compoent with these styles. same thing i said above
 .dark {
   --bg: #1A1A1A;
   --panel-bg: #2C2C2C;

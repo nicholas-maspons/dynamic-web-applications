@@ -1,6 +1,8 @@
+import styles from './StatsPage.module.scss'
+
 function StatsPage () {
     return (
-        <div>Stats</div>
+        <div className={styles.stats}>Stats</div>
     )
 }
 

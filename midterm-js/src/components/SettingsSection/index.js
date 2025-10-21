@@ -10,7 +10,7 @@ function SettingsSection(props) {
     return (
         <div className={styles.section}>
             <h2 className={styles.title}>{title}</h2>
-            {items.map((item) => <SettingsItem label={item.label} Component={item.component}/>)}
+            {items.map((item) => <SettingsItem label={item.label} Component={item.component} func={item.func} bool={item.bool}/>)}
         </div>
 
     )
