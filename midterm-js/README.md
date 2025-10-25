@@ -7,3 +7,7 @@ What I typed in terminal:
 
 https://docs.google.com/presentation/d/1eoS0zDkdriYUOUoHYyBK-QznRsqahgjR1nvUFeIxtfk/edit?usp=sharing
 
+
+![](./src/home.png)
+![](./src/settings1.png)
+![](./src/settings2.png)
