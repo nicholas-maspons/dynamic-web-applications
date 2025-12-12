@@ -1,0 +1,7 @@
+// Only helpful if I am centrering one child
+
+@mixin center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

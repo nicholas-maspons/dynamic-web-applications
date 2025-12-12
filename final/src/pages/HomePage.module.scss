@@ -1,0 +1,90 @@
+@use '../_mixins' as mixins;
+
+.home {
+    margin: 50px auto 0 auto;
+    width: 500px;
+    height: 100vh;
+    // background-color: beige;
+}
+
+.progress {
+    // positive relative bc by default it is static. absolute looks for the nearest ancestor with a position that isnt static. Im using relative
+    position: relative;
+    // 500px is what the width will be so im just matching it since this is a circle not an oval
+    width: 100%;
+    height: 500px;
+    // since there is the 50 on top from .home
+    margin-bottom: 50px;
+    // background-color: pink;
+    
+    .bottom_circle {
+        // position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+    }
+
+    .top_circle {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        // another way i couldve done with but with top and left 0 also and no translate
+        // bottom: 0;
+        // right: 0;
+        // margin: auto;
+        
+        background-color: var(--bg);
+        border-radius: 50%;    
+
+        font-family: var(--ff-open-sans);
+        @include mixins.center-text
+    }
+}
+
+// .button {
+//     margin: 0 auto;
+//     width: 50%;
+//     height: 3rem;
+//     background-color: var(--primary-color);
+
+//     font-family: var(--ff-open-sans);
+//     border-radius: 1.5rem;
+//     @include mixins.center-text;
+// }
+
+.inputs {
+    display: flex;
+    justify-content: space-evenly;
+    // background-color: red;
+
+
+    .input {
+        
+        // margin: 0 auto;
+        box-sizing: border-box; // FINALLY a use for border box. 
+        // So i can use padding-left without making the last input field bigger than the rest
+        width: 30%;
+        height: 2rem;
+        background-color: var(--primary-color);
+        // input field in form elem doesnt inherit the text color unlike everything else?
+        color: var(--text);
+        
+        font-family: var(--ff-open-sans);
+        border: none;
+        border-radius: 1.5rem;
+        @include mixins.center-text;
+
+        
+
+    }
+    .text_input {padding-left: 1rem; }
+
+    input::placeholder { // the color isnt inherited for placeholder so i have to specify
+        color: var(--text);
+    }
+
+}

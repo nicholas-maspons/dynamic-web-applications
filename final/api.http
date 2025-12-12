@@ -1,0 +1,16 @@
+### Read Current State
+GET http://localhost:3001/user HTTP/1.1
+Content-Type: application/json
+
+### Update State (replaces values)
+PUT http://localhost:3001/user HTTP/1.1
+Content-Type: application/json
+
+{
+  "streak": 21,
+  "curr": 500,
+  "goal": 2000,
+  "dark": false,
+  "metric": true,
+  "history": [100, 500, 1000, 1300, 500, 500, 800]
+}

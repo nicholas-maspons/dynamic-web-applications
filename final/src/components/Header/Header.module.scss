@@ -1,0 +1,66 @@
+// The underscore isn't needed but I put it anyway
+@use '../../_mixins' as mixins;
+
+// needs ternary for dark mode (DO LATER)
+.header {
+    // I specify a height so that the 'height: 100%' I use later works, since it requires the parent to have a fixed height
+    // Using 'align-items: stretch' might be an alternative to my repetitions of 'height: 100%' but I'll stick with what I know
+    // But this is also good for media queries
+    // I never use rem but it's time to switch things up
+    height: 4rem;
+    // color: var(--text);
+    background-color: var(--panel-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 2rem;
+    // border-bottom-right-radius: 2rem;
+}
+
+.brand {
+  font-family: var(--ff-dm-sans);
+  margin-left: 1rem;
+}
+
+// I keep doing this so that the pointer on hover works on more than just the text itself. Then it's easier to click
+.nav {
+    font-family: var(--ff-ubuntu);
+    height: 100%;
+}
+
+.ul {
+    height: 100%;
+    display: flex;
+    list-style-type: none;
+}
+
+// just add a :hover
+.link {
+    // The bg of li is transparent without this, and looks the exact same if I remove this line. 
+    // But I need it because the brightness() in :hover needs a color to work with.
+    background-color: var(--panel-bg);    
+    text-decoration: none;
+    // best thing ever. When I made the text white in dark mode, this remained black because saying it here is more specific, so it remained black. 
+    color: inherit;
+    font-size: 0.95rem;
+    padding: 0 2rem;
+    height: 100%;
+
+    @include mixins.center-text;
+
+    transition: filter 0.6s;
+}
+
+.link:hover {
+    cursor: pointer;
+    // Is basically the exact same color as the bg of body. I could just set the bg to that color instead, but at least I'm trying something new
+    // ^ This comment is no longer true, i made it darker now (so delete it...) NO I SAID NO
+    filter: brightness(0.7);
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
+}
+
+// when dark mode time comes, i will change .li class anme to .li_l and make li_d or something and swap between them. but als oa base one bc they both use flex etc

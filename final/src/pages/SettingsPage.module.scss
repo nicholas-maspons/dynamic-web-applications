@@ -1,0 +1,8 @@
+.settings {
+    margin: 50px auto 0 auto;
+    width: 500px;
+
+    // this + the header height causes the scrollbar to appear since 100vh + header height is more than 100vh (obviously)
+    height: 100vh;
+    // background-color: palegreen;
+}

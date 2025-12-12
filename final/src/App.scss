@@ -1,0 +1,23 @@
+// Here I will have styles for when we switch from Light and Dark mode. 'Okay i did it' -futute Nicholas
+
+// these are available to everything including and inside the parent, which is the whole app in this case since App has this style (or dark) at all times
+.light {
+  --bg: #EBEBEB;
+  --panel-bg: #F8F9FA;
+  --text: black; 
+}
+
+// this isdeclaring vars that can be seen all chidlren of the compoent with these styles. same thing i said above
+.dark {
+  --bg: #1A1A1A;
+  --panel-bg: #2C2C2C;
+  --text: white;
+}
+
+.app {
+    // i forgot to include the bg color here as well and it drove me insane. I have three shades (one was the default white) and i didnt know why
+    // this is not inherited so all children have transparent backgrounds, which I need to specify in their scss
+    background-color: var(--bg);
+    // only need to specify here, since color is inherited
+    color: var(--text);
+}

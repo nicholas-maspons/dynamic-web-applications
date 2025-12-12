@@ -1,0 +1,27 @@
+.background {
+    width: 12%;
+    height: 60%;
+    // 50% doesnt work so i picked random numbers until i saw 15px seemed nice
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.off {
+    justify-content: start;
+    background-color: var(--bg);
+}
+
+.on {
+    // this is the default justify val but im stating it anyway
+    justify-content: end;
+    background-color: var(--primary-color);
+}
+
+.knob {
+    width: 50%;
+    height: 85%;
+    border-radius: 15px;
+    margin: 0 3px;
+    background-color: var(--panel-bg);
+}
