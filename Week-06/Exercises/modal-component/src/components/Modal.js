@@ -5,12 +5,12 @@ import cx from 'classnames'
 
 const Modal = (props) => {
 
-    const {children, onClose, actionBar, title} = props;
+    const {children, onClose, actionBar, title, crazy} = props;
 
     useEffect(() => {
         document.body.classList.add('overflow-hidden')
 
-        // runs when the componened is destroyed (user clicks close button or bg to leave modal)
+        // runs when the component is destroyed (user clicks close button or bg to leave modal)
         return () => {
             document.body.classList.remove('overflow-hidden')
         }
@@ -19,7 +19,6 @@ const Modal = (props) => {
     // option 1 for conditional classes
     const overlayClass = crazy ? 'fixed inset-0 bg-teal-300 opacity-50' : 'fixed inset-0 bg-gray-300 opacity-50'
 
-    // why is this in []
     const windowClass = cx('fixed inset-40 p-10 bg-white', {
         'rounded-lg': crazy
     })
@@ -27,8 +26,6 @@ const Modal = (props) => {
     // wrapping arg in the createPortal function
     return ReactDOM.createPortal(
         <>
-            {/* overlay, should cover entire screen & onClick to close the modal */}
-            {/* inset 0 is a css atom, meaning top left right bottom 0 to cover the entire screen */}
             <div onClick={onClose} className={overlayClass}></div>
             {/* Modal Window, this displats the modal content and some sort of  */}
             {/* inset-40 meaning it will be 40% from each edge */}
